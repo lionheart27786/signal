@@ -1,87 +1,19 @@
+def linear_convolution(x, h):
+  M = len(x)
+  N = len(h) 
+  result = [0] * (M + N - 1)
+  for n in range (M + N - 1):
+        for k in range(N):
+              if n - k >= 0 and n - k < M:
+                  result[n] += x[n - k] * h[k]
+  return result
 
-def linear convolution(x, h):
+x=[1,2,3,4,5]
+h=[1,2,3,3,2,1]
 
-M = len(x)
-
-N = len(h) 
-result = [0] * (M + N - 1)
-
-for n in range (M + N - 1):
-
-       for k in range(N):
-
-            if n - k >= 0 and n - k < M:
-
-                 result[n] += x[n - k] * h[k]
-
-return result
+print("Linear COnvolution\n",linear_convolution(x,h))
 
 
-def cross correlation(x, y):
-
-N = len(x)
-result = []
-
-for k in range (N):
-correlation sum = 0 
-         for n in range (N):
-               if n -k >= 0 and n -k < N:
-                  correlation sum += x[n-k]* y[n]
-            result.append(correlation_sum)
-return result
-
-
-def auto correlation(x):
-
-N = len(x)
-result = []
-
-for k in range(N):
-             correlation_sum = 0 
-               for n in range(N):
-                if n-k >= 0 and n - k < N:
-               correlation sum += x[n] x[n - k] result.append(correlation_sum)
-
-return result
-
-
-import
-
-numpy
-
-as np
-
-def circular correlation(x, y):
-
-N = len(x)
-
-result = []
-
-for k in range(N):
-
-correlation_sum 0
-
-for n in range(N):
-
-correlation_sum += x[n] * y[(n + k) % N]
-
-result.append(correlation_sum)
-
-return result
-
-
-
-def circular convolution(x, h):
-
-N = len(x) result = [0]*N
-
-for n in range(N):
-
-for k in range(N):
-
-result[n] += x[(n - k) % N] * h[k]
-
-return result
 
 ----------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@-------------------------
 
