@@ -15,6 +15,48 @@ print("Linear COnvolution\n",linear_convolution(x,h))
 
 
 
+def cicular_convolution(x, h):
+  N = len(x)
+  result = [0] * N
+  for n in range (N):
+        for k in range(N):
+              result[n] += x[(n - k)%N] * h[k]
+  return result
+
+x=[1,2,3,4,5]
+h=[1,2,3,3,2]
+print("Circuular convolution ",cicular_convolution(x,h))
+
+def auto_correlation(x):
+  N=len(x)
+  result=[]
+  for i in range(N):
+    correlation_sum=0
+    for n in range(N):
+      if n-i>=0 and n-i<=N:
+        correlation_sum+=x[n]*x[n-i]
+    result.append(correlation_sum)
+  return result
+
+x=[1,2,3,4,5]
+print("Auto correaltion ",auto_correlation(x))
+
+def cross_corr(x,h):
+  N=len(x)
+  result=[]
+  for i in range(N):
+    correlation_sum=0
+    for n in range(N):
+      if n-i>=0 and n-i<=N:
+        correlation_sum+=x[n]*h[n]
+    result.append(correlation_sum)
+  return result
+
+x=[1,2,3,4,5]
+h=[2,4,6,8,10]
+print("Cross correaltion ",cross_corr(x,h))
+
+
 ----------------------------------------------------@@@@@@@@@@@@@@@@@@@@@@@-------------------------
 
 EXP - 1 generation of signal 
