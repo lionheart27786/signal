@@ -744,3 +744,36 @@ Upper passband edge frequency (rad/s): 2*3.142*8
 (b) Scope
 
 Go to Settings, then click on History and Uncheck the limit data points to last Run time: 4sec
+
+﻿
+
+% Sample input signal
+x = [10, -2+21, -2, -2-21];
+% Number of points in the DFT
+N = length(x);
+% Initialize arrays for DFT and IDFT
+X = zeros(1, N);
+x_reconstructed = zeros(1, N);
+6 Compute DFT
+for k = 0:N-1
+X(k+1) = 0; % Initialize the kth DFT coefficient
+end
+% Compute the kth DFT coefficient
+for n = 0:N-1
+end
+X(k+1) = X(k+1) + x(n+1)*exp(-1i
+k n / N);
+% Compute IDFT
+for n = 0:N-1
+end
+x_reconstructed(n+1) = 0; % Initialize the nth sample of reconstructed:
+% Compute the nth sample of the reconstructed signal
+for k = 0:N-1
+end
+x_reconstructed(n+1) = x_reconstructed (n+1) + X(k+1)*exp(1i * 2 *
+% Normalize IDFT by dividing by N x_reconstructed = x_reconstructed / N;
+* Display DFT and IDFT results disp('DFT:')
+disp(X)
+disp('IDFT:')
+disp(x_reconstructed)
+Rec
